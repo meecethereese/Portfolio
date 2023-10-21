@@ -33,7 +33,7 @@ export const BallCanvas = ({ icon }) => {
 
     return (
         <Canvas
-            frameloop="always"
+            frameloop={isMobile ? "demand" : "always"}
             dpr={[1, 2]}
             gl={{ preserveDrawingBuffer: true }}  
         >
