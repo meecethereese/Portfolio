@@ -120,11 +120,23 @@ const SkillsSection = () => {
                 <h2 className="text-3xl md:text-5xl font-bold text-pearl mb-8">Skills</h2>
                 <div className="flex flex-row flex-wrap justify-center gap-10">
                     {badges.map((badge, index) => (         
+                        <button
+                            onClick={ () => {
+                                if (window.innerWidth < 768)
+                                    toggleShowText(index, !showText[index]);
+                            }}
+                        >    
                             <motion.div 
                                 className="w-16 md:w-28 h-12 md:h-28 mt-4 md:mt-12 relative" 
                                 key={badge.name}
-                                whileHover={() => toggleShowText(index, true)}
-                                onHoverEnd={() => toggleShowText(index, false)}
+                                whileHover={ () => {
+                                    if (window.innerWidth > 768)
+                                        toggleShowText(index, true);
+                                }}
+                                onHoverEnd={() => {
+                                    if (window.innerWidth > 768)
+                                        toggleShowText(index, false);
+                                }}
                             >
                                 <BallCanvas icon={badge.icon} /> 
                                 {showText[index] && (<motion.div 
@@ -136,6 +148,7 @@ const SkillsSection = () => {
                                     {badge.title}
                                 </motion.div>)}
                             </motion.div>
+                        </button>
                     ))}
                 </div>
             </motion.div>

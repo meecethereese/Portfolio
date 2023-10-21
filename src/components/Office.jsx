@@ -58,23 +58,23 @@ export function Office(props) {
         }),
     };
 
-    const textureOpacity = useMotionValue(0);
+    // const textureOpacity = useMotionValue(0);
 
-    useEffect(() => {
-        animate(textureOpacity, section === 0 ? 1 : 0, {
-            duration: 0.8,
-        });
-    }, [section]);
+    // useEffect(() => {
+    //     animate(textureOpacity, section === 0 ? 1 : 0, {
+    //         duration: 0.8,
+    //     });
+    // }, [section]);
 
-    useFrame(() => {
-        const matOpacity = textureOpacity.get();
-        textureMaterial.coffeePlant.opacity = matOpacity;
-        textureMaterial.computer.opacity = matOpacity;
-        textureMaterial.plane.opacity = matOpacity;
-        textureMaterial.keybrdCompMse.opacity = matOpacity;
-        textureMaterial.monitor.opacity = matOpacity;
-        textureMaterial.rug.opacity = matOpacity;
-    });
+    // useFrame(() => {
+    //     const matOpacity = textureOpacity.get();
+    //     textureMaterial.coffeePlant.opacity = matOpacity;
+    //     textureMaterial.computer.opacity = matOpacity;
+    //     textureMaterial.plane.opacity = matOpacity;
+    //     textureMaterial.keybrdCompMse.opacity = matOpacity;
+    //     textureMaterial.monitor.opacity = matOpacity;
+    //     textureMaterial.rug.opacity = matOpacity;
+    // });
 
     return (
         <group ref={group} {...props} dispose={null}>
@@ -89,9 +89,9 @@ export function Office(props) {
                     position={[1.792, 2.084, 1.336]} 
                     rotation={[-Math.PI, 1.432, -Math.PI]} 
                     scale={0.671}
-                    animate={{
-                        scale: section === 0 ? 0.671 : 0
-                    }}
+                    // animate={{
+                    //     scale: section === 0 ? 0.671 : 0
+                    // }}
                 >
                     <mesh name="mesh1129829827" geometry={nodes.mesh1129829827.geometry} material={materials['mat23.002']} />
                     <mesh name="mesh1129829827_1" geometry={nodes.mesh1129829827_1.geometry} material={materials['mat8.001']} />
@@ -104,9 +104,9 @@ export function Office(props) {
                     position={[0.809, 0.967, 1.955]} 
                     rotation={[0, 0.541, 0]} 
                     scale={0.006}
-                    animate={{
-                        scale: section === 0 ? 0.006 : 0
-                    }}
+                    // animate={{
+                    //     scale: section === 0 ? 0.006 : 0
+                    // }}
                 >
                     <mesh name="chesspiece_king_Cylinder012-Mesh" geometry={nodes['chesspiece_king_Cylinder012-Mesh'].geometry} material={materials.Black_Piece} />
                     <mesh name="chesspiece_king_Cylinder012-Mesh_1" geometry={nodes['chesspiece_king_Cylinder012-Mesh_1'].geometry} material={materials.Chessboard_Surround} />
@@ -118,9 +118,9 @@ export function Office(props) {
                     name="Bookcase" 
                     position={[1.742, 0.52, -1.343]} 
                     rotation={[-Math.PI, 1.562, -Math.PI]}
-                    animate={{
-                        scale: section === 0 ? 1 : 0
-                    }}
+                    // animate={{
+                    //     scale: section === 0 ? 1 : 0
+                    // }}
                 >
                     <mesh name="mesh187267960" geometry={nodes.mesh187267960.geometry} material={materials.mat20} />
                     <mesh name="mesh187267960_1" geometry={nodes.mesh187267960_1.geometry} material={materials.mat17} />
@@ -143,9 +143,9 @@ export function Office(props) {
                     name="Desk" 
                     position={[1.503, 0, 1.292]} 
                     rotation={[-Math.PI, 0.021, -Math.PI]}
-                    animate={{
-                        scale: section === 0 ? 1 : 0
-                    }}
+                    // animate={{
+                    //     scale: section === 0 ? 1 : 0
+                    // }}
                 >
                     <mesh name="Cube007_Cube008_GrayPlastic" geometry={nodes.Cube007_Cube008_GrayPlastic.geometry} material={materials.GrayPlastic} />
                     <mesh name="Cube007_Cube008_GrayPlastic_1" geometry={nodes.Cube007_Cube008_GrayPlastic_1.geometry} material={materials.BlackCoatSteel} />
@@ -157,9 +157,9 @@ export function Office(props) {
                     name="Legos" 
                     position={[1.776, 2.075, 0.813]} 
                     scale={0.708}
-                    animate={{
-                        scale: section === 0 ? 0.708 : 0
-                    }}
+                    // animate={{
+                    //     scale: section === 0 ? 0.708 : 0
+                    // }}
                 >
                     <mesh name="mesh2038704105" geometry={nodes.mesh2038704105.geometry} material={materials['mat8.002']} />
                     <mesh name="mesh2038704105_1" geometry={nodes.mesh2038704105_1.geometry} material={materials['mat5.001']} />
@@ -169,9 +169,9 @@ export function Office(props) {
                     position={[1.685, 2.058, 1.89]} 
                     rotation={[0.026, 0.486, 3.124]} 
                     scale={0.205}
-                    animate={{
-                        scale: section === 0 ? 0.205 : 0
-                    }}
+                    // animate={{
+                    //     scale: section === 0 ? 0.205 : 0
+                    // }}
                 >
                     <mesh name="mesh688460878" geometry={nodes.mesh688460878.geometry} material={materials['mat18.001']} />
                     <mesh name="mesh688460878_1" geometry={nodes.mesh688460878_1.geometry} material={materials.mat15} />
@@ -186,9 +186,9 @@ export function Office(props) {
                     position={[7.601, 0, 11.72]} 
                     rotation={[-Math.PI, 1.547, -Math.PI]} 
                     scale={0.032}
-                    animate={{
-                        scale: section === 0 ? 0.032 : 0
-                    }}    
+                    // animate={{
+                    //     scale: section === 0 ? 0.032 : 0
+                    // }}    
                 >
                     <mesh name="Node-Mesh" geometry={nodes['Node-Mesh'].geometry} material={materials.Office_Cha} />
                     <mesh name="Node-Mesh_1" geometry={nodes['Node-Mesh_1'].geometry} material={materials.Office_Cha_1} />
@@ -199,9 +199,9 @@ export function Office(props) {
                     position={[1.837, 2.015, 1.321]} 
                     rotation={[0, -1.571, 0]} 
                     scale={0.412}
-                    animate={{
-                        scale: section === 0 ? 0.412 : 0
-                    }}    
+                    // animate={{
+                    //     scale: section === 0 ? 0.412 : 0
+                    // }}    
                 >
                     <mesh name="Shelf_1" geometry={nodes.SM_ShelfSM_Shelf1_1.geometry} material={materials.lambert2SG} />
                     <mesh name="Shelf_1_1" geometry={nodes.SM_ShelfSM_Shelf1_1_1.geometry} material={materials['lambert3SG.001']} />
@@ -213,9 +213,9 @@ export function Office(props) {
                     position={[1.841, 0.941, 0.7]} 
                     rotation={[Math.PI, -1.564, Math.PI]} 
                     scale={0.002}
-                    animate={{
-                        scale: section === 0 ? 0.002 : 0
-                    }}
+                    // animate={{
+                    //     scale: section === 0 ? 0.002 : 0
+                    // }}
                 />
                 <motion.mesh 
                     name="CoffeePlant" 
@@ -223,9 +223,9 @@ export function Office(props) {
                     material={textureMaterial.coffeePlant} 
                     position={[-1.436, 0, -1.879]} rotation={[Math.PI, -0.014, Math.PI]} 
                     scale={0.212} 
-                    animate={{
-                        scale: section === 0 ? 0.212 : 0
-                    }}
+                    // animate={{
+                    //     scale: section === 0 ? 0.212 : 0
+                    // }}
                 />
                 <motion.mesh 
                     name="Rug" 
@@ -233,9 +233,9 @@ export function Office(props) {
                     material={textureMaterial.rug} 
                     position={[-0.952, 0, 1.248]} 
                     rotation={[Math.PI, -1.564, Math.PI]} 
-                    animate={{
-                        scale: section === 0 ? 1 : 0
-                    }}
+                    // animate={{
+                    //     scale: section === 0 ? 1 : 0
+                    // }}
                 />
                 <motion.mesh 
                     name="Monitor" 
@@ -244,9 +244,9 @@ export function Office(props) {
                     position={[1.583, 0.947, 1.07]} 
                     rotation={[Math.PI, -1.555, Math.PI]} 
                     scale={0.002} 
-                    animate={{
-                        scale: section === 0 ? 0.002 : 0
-                    }}
+                    // animate={{
+                    //     scale: section === 0 ? 0.002 : 0
+                    // }}
                 />
                 <mesh 
                     name="Screen" 
@@ -262,9 +262,9 @@ export function Office(props) {
                     position={[1.406, 0.944, 1.362]} 
                     rotation={[0, -1.558, 0]} 
                     scale={0.002}
-                    animate={{
-                        scale: section === 0 ? 0.002 : 0
-                    }}
+                    // animate={{
+                    //     scale: section === 0 ? 0.002 : 0
+                    // }}
                 >
                     <mesh name="System_unit_1002" geometry={nodes.System_unit_1002.geometry} material={textureMaterial.computer} />
                     <mesh name="System_unit_1002_1" geometry={nodes.System_unit_1002_1.geometry} material={textureMaterial.computer} />

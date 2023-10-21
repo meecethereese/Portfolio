@@ -16,7 +16,7 @@ export const badges = [
         icon: "logos/eagle.png",
     },
     {
-        title: "Google Apps Script",
+        title: "Apps Script",
         icon: "logos/google-apps-script.png",
     },
     {

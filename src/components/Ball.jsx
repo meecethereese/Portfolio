@@ -31,7 +31,7 @@ const Ball = (props) => {
 export const BallCanvas = ({ icon }) => {
     return (
         <Canvas
-            frameloop="always"
+            frameloop={window.innerWidth < 768 ? "never" : "always"}
             dpr={[1, 2]}
             gl={{ preserveDrawingBuffer: true }}  
         >
