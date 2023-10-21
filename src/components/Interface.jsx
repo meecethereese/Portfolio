@@ -105,8 +105,7 @@ const AboutSection = (props) => {
 
 const SkillsSection = () => {
     const [showText, setShowText] = useState(Array(badges.length).fill(false));
-    const viewport = useThree();
-    const responsiveRatio = viewport.width / 12;
+    const isMobile = window.innerWidth < 768;
 
     const toggleShowText = (index, val) => {
         const newShowText = [...showText];

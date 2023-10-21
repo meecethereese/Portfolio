@@ -29,9 +29,11 @@ const Ball = (props) => {
 };
 
 export const BallCanvas = ({ icon }) => {
+    const isMobile = window.innerWidth < 768;
+
     return (
         <Canvas
-            frameloop={window.innerWidth < 768 ? "never" : "always"}
+            frameloop="always"
             dpr={[1, 2]}
             gl={{ preserveDrawingBuffer: true }}  
         >
