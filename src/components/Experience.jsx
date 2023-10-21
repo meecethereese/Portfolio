@@ -65,7 +65,7 @@ export const Experience = (props) => {
     state.camera.lookAt(cameraLookAtZ.get(), 0, 0);
   
     if (section === 0) {
-    characterContainerAboutRef.current.getWorldPosition(characterGroup.current.position);
+      characterContainerAboutRef.current.getWorldPosition(characterGroup.current.position);
     }
   });
 
@@ -153,55 +153,57 @@ export const Experience = (props) => {
         ></group>
       </motion.group>
       {/* SKILLS */}
-      <motion.group 
-        position={[0, 0, 2]}
-        animate={{
-          z: section === 1 ? (isMobile ? -1.5 : 0) : (isMobile ? -7 : -6),
-          y: section === 1 ? -viewport.height : (isMobile ? -8 : 1),
-          x: section === 1 ? -4 : 10,
-          scaleX: Math.min(1, responsiveRatio),
-          scaleY: Math.min(1, responsiveRatio),
-          scaleZ: Math.min(1, responsiveRatio),
-        }}
-      >
-        <directionalLight position={[0, 0, 2]} intensity={0.4} />
-        <Float>
-          <mesh scale={[2, 2, 2]} position={[3, 0, 7]}>
-            <sphereGeometry />
-            <MeshDistortMaterial
-              opacity={0.8}
-              transparent
-              distort={0.4}
-              speed={4}
-              color={"red"}
-            />
-          </mesh>
-        </Float>
-        <Float>
-          <mesh scale={[3, 3, 3]} position={[5, 0, 2]}>
-            <sphereGeometry />
-            <MeshDistortMaterial
-              opacity={0.8}
-              transparent
-              distort={1}
-              speed={5}
-              color={"yellow"}
-            />
-          </mesh>
-        </Float>
-        <Float>
-          <mesh scale={[1.4, 1.4, 1.4]} position={[0, 2, 2]}>
-            <boxGeometry />
-            <MeshWobbleMaterial
-              opacity={0.8}
-              transparent
-              factor={1}
-              speed={5}
-              color={"blue"}
-            />
-          </mesh>
-        </Float>
-      </motion.group>
+      {!isMobile && (
+        <motion.group 
+          position={[0, 0, 2]}
+          animate={{
+            z: section === 1 ? 0 : -6,
+            y: section === 1 ? -viewport.height : 1,
+            x: section === 1 ? -4 : 10,
+            scaleX: Math.min(1, responsiveRatio),
+            scaleY: Math.min(1, responsiveRatio),
+            scaleZ: Math.min(1, responsiveRatio),
+          }}
+        >
+          <directionalLight position={[0, 0, 2]} intensity={0.4} />
+          <Float>
+            <mesh scale={[2, 2, 2]} position={[3, 0, 7]}>
+              <sphereGeometry />
+              <MeshDistortMaterial
+                opacity={0.8}
+                transparent
+                distort={0.4}
+                speed={4}
+                color={"red"}
+              />
+            </mesh>
+          </Float>
+          <Float>
+            <mesh scale={[3, 3, 3]} position={[5, 0, 2]}>
+              <sphereGeometry />
+              <MeshDistortMaterial
+                opacity={0.8}
+                transparent
+                distort={1}
+                speed={5}
+                color={"yellow"}
+              />
+            </mesh>
+          </Float>
+          <Float>
+            <mesh scale={[1.4, 1.4, 1.4]} position={[0, 2, 2]}>
+              <boxGeometry />
+              <MeshWobbleMaterial
+                opacity={0.8}
+                transparent
+                factor={1}
+                speed={5}
+                color={"blue"}
+              />
+            </mesh>
+          </Float>
+        </motion.group>
+      )}
       <Projects />
     </>
   );
