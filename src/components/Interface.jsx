@@ -121,7 +121,7 @@ const SkillsSection = () => {
                     {badges.map((badge, index) => (         
                         <button
                             onClick={ () => {
-                                if (window.innerWidth < 768)
+                                if (isMobile)
                                     toggleShowText(index, !showText[index]);
                             }}
                         >    
@@ -129,15 +129,18 @@ const SkillsSection = () => {
                                 className="w-16 md:w-28 h-12 md:h-28 mt-4 md:mt-12 relative" 
                                 key={badge.name}
                                 whileHover={ () => {
-                                    if (window.innerWidth > 768)
+                                    if (!isMobile)
                                         toggleShowText(index, true);
                                 }}
                                 onHoverEnd={() => {
-                                    if (window.innerWidth > 768)
+                                    if (!isMobile)
                                         toggleShowText(index, false);
                                 }}
                             >
-                                <BallCanvas icon={badge.icon} /> 
+                                {
+                                    !isMobile ? <BallCanvas icon={badge.icon} /> : 
+                                                <img src={badge.icon} className="h-3/4 mx-auto"/>
+                                }
                                 {showText[index] && (<motion.div 
                                     className=" text-xs md:text-lg text-center mt-2 text-gunmetal-50 bg-pearl rounded-lg p-2 shadow-lg font-semibold"
                                     initial={{ opacity: 0 }}
