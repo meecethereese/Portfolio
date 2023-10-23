@@ -166,7 +166,7 @@ const ProjectsSection = () => {
     };
 
     const previousProject = () => {
-        setCurrentProject(currentProject - 1 === -1 ? 3 : (currentProject - 1 ) % projects.length)
+        setCurrentProject(currentProject - 1 === -1 ? 4 : (currentProject - 1 ) % projects.length)
     };
 
     return (
