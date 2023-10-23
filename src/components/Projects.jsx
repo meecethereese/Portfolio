@@ -7,6 +7,16 @@ import { useMotionValue, animate } from "framer-motion";
 
 export const projects = [
     {
+        title: "Application Master",
+        image: "projects/ApplicationMaster.jpg",
+        description: "Constructed a data manager program for job applications within Google Apps Script to assist with organization and tracking."
+    },
+    {
+        title: "Cascading Bipolar Junction Transistor",
+        image: "projects/BJT.jpg",
+        description: "For UCF's Electronics 1 course's final laboratory assignment we were tasked with designing a cascading bipolar junction transistor circuit to meet given requirements."
+    },
+    {
         title: "Contact Manager",
         image: "projects/ContactManager.jpg",
         description: "Created a contact manager web application following LAMP stack structure that showcased CRUD applicability for UCF's Processes for Object-oriented Software Development course."
@@ -19,12 +29,7 @@ export const projects = [
     {
         title: "Range Finder", 
         image: "projects/RangeFinder.jpg",
-        description: "Spent many weeks in UCF's Junior Design course learning the entire process that goes into circuit design for multiple components from drawing schematics in Eagle to sourcing parts and finally assembly."
-    },
-    {
-        title: "Application Master",
-        image: "projects/ApplicationMaster.jpg",
-        description: "Constructed a data manager program for job applications within Google Apps Script to assist with organization and tracking."
+        description: "For UCF's Junior Design course, the semester was spent becoming familiar with circuit integration techniques and applied that knowledge by designing a range finder device."
     },
 ];
 
