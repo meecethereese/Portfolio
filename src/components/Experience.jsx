@@ -63,7 +63,7 @@ export const Experience = (props) => {
 
     state.camera.position.z = cameraPositionZ.get();
     state.camera.lookAt(cameraLookAtZ.get(), 0, 0);
-  
+
     if (section === 0) {
       characterContainerAboutRef.current.getWorldPosition(characterGroup.current.position);
     }
@@ -100,7 +100,7 @@ export const Experience = (props) => {
           2: {
             y: -viewport.height * 2 + 1.5,
             x: -5,
-            z: isMobile ? -1.4 : -2.5,
+            z: isMobile ? -1.4 : -3,
             rotateX: Math.PI / 16,
             rotateY: Math.PI / 6,
             rotateZ: 0,
@@ -124,15 +124,15 @@ export const Experience = (props) => {
         <Avatar animation={characterAnimation} wireframe={section === 1} />
       </motion.group>
       <ambientLight intensity={1} />
-      <motion.group 
+      <motion.group
         position={[
-          isMobile ? 2 : 0, 
-          isMobile ? -viewport.height / 2: 0, 
+          isMobile ? 2 : 0,
+          isMobile ? -viewport.height / 2: 0,
           isMobile ? -0.75 : 2 * Math.min(1, officeScaleRatio),
-        ]} 
+        ]}
         scale={[
-          officeScaleRatio, 
-          officeScaleRatio, 
+          officeScaleRatio,
+          officeScaleRatio,
           officeScaleRatio,
         ]}
         rotation-y={-Math.PI / 4}
@@ -154,7 +154,7 @@ export const Experience = (props) => {
       </motion.group>
       {/* SKILLS */}
       {!isMobile && (
-        <motion.group 
+        <motion.group
           position={[0, 0, 2]}
           animate={{
             z: section === 1 ? 0 : -6,

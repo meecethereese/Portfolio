@@ -5,13 +5,12 @@ import { useForm, ValidationError } from '@formspree/react';
 import { badges } from "../config";
 import { BallCanvas } from "./Ball";
 import { useState } from "react";
-import { useThree } from "@react-three/fiber";
 
 const Section = (props) => {
     const { children, mobileTop } = props;
 
     return (
-        <motion.section 
+        <motion.section
             className={`
                 h-screen w-screen p-8 max-w-screen-2xl mx-auto
                 flex flex-col items-start
@@ -37,7 +36,7 @@ const Section = (props) => {
 
 export const Interface = (props) => {
     const { setSection } = props;
-    
+
     return (
         <div className="flex flex-col items-center w-screen">
             <AboutSection setSection={setSection} />
@@ -118,15 +117,15 @@ const SkillsSection = () => {
             <motion.div className="w-full" whileInView={"visible"}>
                 <h2 className="text-3xl md:text-5xl font-bold text-pearl mb-8">Skills</h2>
                 <div className="flex flex-row flex-wrap justify-center gap-10">
-                    {badges.map((badge, index) => (         
+                    {badges.map((badge, index) => (
                         <button
                             onClick={ () => {
                                 if (isMobile)
                                     toggleShowText(index, !showText[index]);
                             }}
-                        >    
-                            <motion.div 
-                                className="w-16 md:w-28 h-12 md:h-28 mt-4 md:mt-12 relative" 
+                        >
+                            <motion.div
+                                className="w-16 md:w-28 h-12 md:h-28 mt-4 md:mt-12 relative"
                                 key={badge.name}
                                 whileHover={ () => {
                                     if (!isMobile)
@@ -138,10 +137,10 @@ const SkillsSection = () => {
                                 }}
                             >
                                 {
-                                    !isMobile ? <BallCanvas icon={badge.icon} /> : 
+                                    !isMobile ? <BallCanvas icon={badge.icon} /> :
                                                 <img src={badge.icon} className="h-3/4 mx-auto"/>
                                 }
-                                {showText[index] && (<motion.div 
+                                {showText[index] && (<motion.div
                                     className=" text-xs md:text-lg text-center mt-2 text-gunmetal-50 bg-pearl rounded-lg p-2 shadow-lg font-semibold"
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
@@ -166,7 +165,7 @@ const ProjectsSection = () => {
     };
 
     const previousProject = () => {
-        setCurrentProject(currentProject - 1 === -1 ? 4 : (currentProject - 1 ) % projects.length)
+        setCurrentProject(currentProject - 1 === -1 ? projects.length - 1 : (currentProject - 1 ) % projects.length)
     };
 
     return (
@@ -175,19 +174,19 @@ const ProjectsSection = () => {
                 <div className="flex justify-center w-full mb-8 text-platinum">
                     <button
                         className="hover:text-ecru transition-colors mr-16"
-                        onClick={nextProject}
+                        onClick={previousProject}
                     >
                         ← Previous
                     </button>
                     <h2 className="text-3xl md:text-5xl font-bold">Projects</h2>
                     <button
                         className="hover:text-ecru transition-colors ml-16"
-                        onClick={previousProject}
+                        onClick={nextProject}
                     >
                         Next →
                     </button>
                 </div>
-                <div className="p-4 text-center w-full md:w-1/2 flex flex-col justify-center h-1/6">
+                <div className="p-4 text-center w-full md:w-1/2 flex flex-col justify-center h-1/6 mt-8">
                     <p className="text-platinum text-base md:text-lg">
                         {projects[currentProject].description}
                     </p>
@@ -230,7 +229,7 @@ const ContactSection = () => {
                         className="block w-full rounded-md border-0 text-gunmetal-50 shadow-sm ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
                     />
                     <ValidationError
-                        className="mt-1 text-red-500" 
+                        className="mt-1 text-red-500"
                         prefix="Email"
                         field="email"
                         errors={state.errors}
@@ -246,9 +245,9 @@ const ContactSection = () => {
                         id="message"
                         className="h-32 block w-full rounded-md border-0 text-gunmetal-50 shadow-sm ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
                     />
-                    <ValidationError 
-                        className="mt-1 text-red-500" 
-                        errors={state.errors} 
+                    <ValidationError
+                        className="mt-1 text-red-500"
+                        errors={state.errors}
                     />
                     <button disabled={state.submitting} className="bg-gunmetal-150 text-platinum py-4 px-8 rounded-lg font-bold text-lg mt-16">
                         Submit
