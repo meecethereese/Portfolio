@@ -186,8 +186,8 @@ const ProjectsSection = () => {
                         Next →
                     </button>
                 </div>
-                <div className="p-4 text-center w-full md:w-1/2 flex flex-col justify-center h-1/6 mt-8">
-                    <p className="text-platinum text-base md:text-lg">
+                <div className="p-4 text-center w-full md:w-1/2 flex flex-col justify-center h-1/6 mt-12 md:mt-8">
+                    <p className="text-platinum text-sm md:text-lg">
                         {projects[currentProject].description}
                     </p>
                 </div>
