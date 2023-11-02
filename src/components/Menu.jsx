@@ -3,13 +3,13 @@ import { faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 
 export const Menu = (props) => {
     const { section, onSectionChange, menuOpened, setMenuOpened } = props;
-    
+
     return (
         <>
             <button
                 onClick={() => setMenuOpened(!menuOpened)}
                 className={`z-20 fixed top-4 right-4 md:top-12 md:right-12 p-3 w-11 h-11 rounded-md ${
-                    section === 0 ? "bg-ecru" : 
+                    section === 0 ? "bg-ecru" :
                     section === 1 ? "bg-pearl" :
                     section === 2 ? "bg-platinum" : "bg-gunmetal-150"
                 }`}
@@ -53,25 +53,45 @@ export const Menu = (props) => {
                 }`}
             >
                 <div className="flex-1 flex items-smart justify-center flex-col gap-6 p-8">
-                    <MenuButton 
-                        section={section} 
-                        label="About" 
-                        onClick={() => onSectionChange(0)} 
+                    <MenuButton
+                        section={section}
+                        label="About"
+                        onClick={() => {
+                            if (section === 0)
+                                setMenuOpened(false);
+                            else
+                                onSectionChange(0);
+                        }}
                     />
                     <MenuButton
                         section={section}
                         label="Skills"
-                        onClick={() => onSectionChange(1)}
+                        onClick={() => {
+                            if (section === 1)
+                                setMenuOpened(false);
+                            else
+                                onSectionChange(1);
+                        }}
                     />
                     <MenuButton
                         section={section}
                         label="Projects"
-                        onClick={() => onSectionChange(2)}
+                        onClick={() => {
+                            if (section === 2)
+                                setMenuOpened(false);
+                            else
+                                onSectionChange(2);
+                        }}
                     />
                     <MenuButton
                         section={section}
                         label="Contact"
-                        onClick={() => onSectionChange(3)}
+                        onClick={() => {
+                            if (section === 3)
+                                setMenuOpened(false);
+                            else
+                                onSectionChange(3);
+                        }}
                     />
                 </div>
                 <div>
@@ -83,14 +103,14 @@ export const Menu = (props) => {
                                 rel="noreferrer"
                                 href="https://www.linkedin.com/in/mauricioferrari7/"
                             >
-                                <FontAwesomeIcon 
+                                <FontAwesomeIcon
                                     className="hover:text-indigo-600"
-                                    icon={faLinkedin} 
+                                    icon={faLinkedin}
                                     color={`${
                                         section === 0 ? "#363636" :
                                         section === 1 ? "#2D333B" :
                                         section === 2 ? "#29313E" : "#E5E5E5"
-                                    }`} 
+                                    }`}
                                 />
                             </a>
                         </li>
@@ -101,14 +121,14 @@ export const Menu = (props) => {
                                 rel="noreferrer"
                                 href="https://github.com/meecethereese"
                             >
-                                <FontAwesomeIcon 
+                                <FontAwesomeIcon
                                     className="hover:text-indigo-600"
-                                    icon={faGithub} 
+                                    icon={faGithub}
                                     color={`${
                                         section === 0 ? "#363636" :
                                         section === 1 ? "#2D333B" :
                                         section === 2 ? "#29313E" : "#E5E5E5"
-                                    }`}  
+                                    }`}
                                 />
                             </a>
                         </li>
