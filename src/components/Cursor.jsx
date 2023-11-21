@@ -46,15 +46,11 @@ export const Cursor = () => {
             function (e) {
                 if (
                     e.target.tagName.toLowerCase() === "button" ||
-                    // check parent is button
                     e.target.parentElement.tagName.toLowerCase() === "button" ||
-                    // check is input or textarea
                     e.target.tagName.toLowerCase() === "input" ||
                     e.target.tagName.toLowerCase() === "textarea" ||
-                    e.target.className.toLowerCase().includes("link") ||
-                    e.target.className.toLowerCase().includes("ballcanvas") ||
-                    e.target.parentElement.className.toLowerCase().includes("ballcanvas")
-                ) 
+                    e.target.className.toLowerCase().includes("link")
+                )
                 {
                     setHoverButton(true);
                 }
@@ -69,12 +65,12 @@ export const Cursor = () => {
             document.removeEventListener("mouseover", mouseEventListener);
         };
     }, []);
-    
+
     return (
         <>
             <div
-                className={`invisible md:visible z-50 fixed -translate-x-1/2 -translate-y-1/2 rounded-full 
-                    pointer-events-none transition-transform 
+                className={`invisible md:visible z-50 fixed -translate-x-1/2 -translate-y-1/2 rounded-full
+                    pointer-events-none transition-transform
                     ${
                         hoverButton ? "bg-transparent border-2 border-indigo-900 w-5 h-5"
                                     : "bg-indigo-500 w-4 h-3"
