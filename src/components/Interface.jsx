@@ -5,6 +5,8 @@ import { useForm, ValidationError } from '@formspree/react';
 import { badges } from "../config";
 import { BallCanvas } from "./Ball";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Section = (props) => {
     const { children, mobileTop } = props;
@@ -190,6 +192,21 @@ const ProjectsSection = () => {
                     <p className="text-platinum text-sm md:text-lg">
                         {projects[currentProject].description}
                     </p>
+                    {projects[currentProject].github !== "" ? (
+                        <div className="w-auto h-auto mt-5">
+                            <button
+                                onClick={() => window.open(projects[currentProject].github, "_blank")}
+                            >
+                                <FontAwesomeIcon
+                                    className="hover:text-indigo-600 text-xl md:text-4xl"
+                                    icon={faGithub}
+                                    color="#E5E5E5"
+                                />
+                            </button>
+                        </div>
+                    ): (
+                        <></>
+                    )}
                 </div>
             </div>
         </Section>

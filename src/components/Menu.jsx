@@ -93,6 +93,17 @@ export const Menu = (props) => {
                                 onSectionChange(3);
                         }}
                     />
+                    <a
+                        className={`text-2xl font-bold cursor-pointer hover:text-indigo-600 transition-colors text-center ${
+                            section === 0 ? "text-jet" :
+                            section === 1 ? "text-gunmetal-50" :
+                            section === 2 ? "text-gunmetal-100" : "text-platinum"
+                        }`}
+                        href="Mauricio_Ferrari_resume.pdf"
+                        download
+                    >
+                        Resume
+                    </a>
                 </div>
                 <div>
                     <ul className="list-none p-0 text-center">
@@ -106,11 +117,11 @@ export const Menu = (props) => {
                                 <FontAwesomeIcon
                                     className="hover:text-indigo-600"
                                     icon={faLinkedin}
-                                    color={`${
+                                    color={
                                         section === 0 ? "#363636" :
                                         section === 1 ? "#2D333B" :
                                         section === 2 ? "#29313E" : "#E5E5E5"
-                                    }`}
+                                    }
                                 />
                             </a>
                         </li>
@@ -124,11 +135,11 @@ export const Menu = (props) => {
                                 <FontAwesomeIcon
                                     className="hover:text-indigo-600"
                                     icon={faGithub}
-                                    color={`${
+                                    color={
                                         section === 0 ? "#363636" :
                                         section === 1 ? "#2D333B" :
                                         section === 2 ? "#29313E" : "#E5E5E5"
-                                    }`}
+                                    }
                                 />
                             </a>
                         </li>
